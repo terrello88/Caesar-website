@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caesar Blue Pools</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Caesar Blue Pools</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Reliable Pool Maintenance You Can Trust</h2>
+    <p>Serving Orangeburg, SC and surrounding areas</p>
+  </section>
+
+  <section id="services">
+    <h3>Our Services</h3>
+    <ul>
+      <li>Weekly Pool Maintenance</li>
+      <li>Water Testing & Balancing</li>
+      <li>Filter Cleaning</li>
+      <li>Algae Treatment</li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h3>About Us</h3>
+    <p>Inspired by Caesar, our beloved blue Staffy 🐾, we bring care and loyalty to every pool we clean.</p>
+  </section>
+
+  <section id="gallery">
+    <h3>Gallery</h3>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x200?text=Before+Cleaning" alt="Before Pool Cleaning">
+      <img src="https://via.placeholder.com/300x200?text=After+Cleaning" alt="After Pool Cleaning">
+      <img src="https://via.placeholder.com/300x200?text=Caesar+Approved" alt="Caesar Approved Pool">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Contact & Booking</h3>
+    <form name="contact" method="POST" data-netlify="true">
+      <p><label>Your Name: <input type="text" name="name" required></label></p>
+      <p><label>Email: <input type="email" name="email" required></label></p>
+      <p><label>Phone: <input type="tel" name="phone"></label></p>
+      <p><label>Service Needed: 
+        <select name="service">
+          <option>Weekly Maintenance</option>
+          <option>Water Testing</option>
+          <option>Filter Cleaning</option>
+          <option>Algae Treatment</option>
+          <option>Other</option>
+        </select>
+      </label></p>
+      <p><label>Preferred Date: <input type="date" name="preferred_date"></label></p>
+      <p><label>Message: <textarea name="message"></textarea></label></p>
+      <p><button type="submit">Submit Request</button></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Caesar Blue Pools</p>
+  </footer>
+</body>
+</html>
