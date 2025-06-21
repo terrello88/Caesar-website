@@ -7,111 +7,159 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f0f8ff;
+      margin: 0;
+      background-color: #f5faff;
       color: #003366;
     }
+
     header {
-      background: #0077be; /* ocean blue */
-      padding: 1rem 2rem;
+      background: #0077be;
       display: flex;
       align-items: center;
+      padding: 1rem 2rem;
       gap: 1rem;
     }
+
     header img {
       height: 50px;
     }
+
     header h1 {
-      margin: 0;
+      color: white;
       font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1576462218300-37cc14cfc902?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      padding: 6rem 2rem;
+      text-align: center;
       color: white;
     }
-    main {
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero button {
+      background-color: #ffffffcc;
+      color: #003366;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
-    .hero-img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+
+    .section h3 {
+      margin-top: 0;
     }
-    section {
-      margin-bottom: 2rem;
-    }
-    button.cta {
-      background-color: #0099ff;
-      color: white;
-      border: none;
-      padding: 1rem 1.5rem;
-      font-size: 1.1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
       margin-top: 1rem;
     }
-    button.cta:hover {
-      background-color: #0077be;
+
+    .gallery img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 8px;
     }
+
     form {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       max-width: 400px;
     }
+
     input, textarea {
       padding: 0.8rem;
-      font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 4px;
-      resize: vertical;
+      font-size: 1rem;
     }
+
+    button.cta {
+      background-color: #0099ff;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
     footer {
-      background: #003366;
+      background-color: #003366;
       color: white;
       text-align: center;
       padding: 1rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
+
     a {
-      color: #0099ff;
+      color: #00ccff;
       text-decoration: none;
     }
   </style>
 </head>
 <body>
+
   <header>
     <img src="https://i.postimg.cc/WF1Q0LHc/caesar-blue-pools-logo.png" alt="Caesar Blue Pools Logo" />
     <h1>Caesar Blue Pools</h1>
   </header>
 
-  <main>
-    <section>
-      <img class="hero-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Beautiful pool water" />
-      <h2>Your Trusted Pool Maintenance Experts</h2>
-      <p>Keeping your pool crystal clear and ready for fun all year round. We offer professional cleaning, chemical balancing, and equipment checks.</p>
-      <button class="cta" onclick="document.getElementById('contact').scrollIntoView()">Contact Us</button>
-    </section>
+  <section class="hero">
+    <h2>Professional Pool Maintenance</h2>
+    <p>Crystal clear pools. Dependable service. Always blue.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Request Service</button>
+  </section>
 
-    <section>
-      <h3>Pool Cleaning Supplies</h3>
-      <img src="https://images.unsplash.com/photo-1590080877777-cfa6a9e69e46?auto=format&fit=crop&w=800&q=80" alt="Pool cleaning supplies" style="width:100%; max-width:500px; border-radius:8px;" />
-    </section>
+  <section class="section">
+    <h3>What We Do</h3>
+    <ul>
+      <li>✅ Pool Cleaning & Vacuuming</li>
+      <li>✅ Chemical Balancing & Testing</li>
+      <li>✅ Weekly Maintenance Plans</li>
+      <li>✅ Filter & Pump Checks</li>
+      <li>✅ Pool Opening & Closing</li>
+    </ul>
+  </section>
 
-    <section id="contact">
-      <h3>Contact Caesar Blue Pools</h3>
-      <form id="contact-form" action="https://formspree.io/f/mayvlzoq" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="_replyto" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="cta">Send Message</button>
-      </form>
-    </section>
-  </main>
+  <section class="section">
+    <h3>Real Pools We Maintain</h3>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1559847844-5315695dada7?auto=format&fit=crop&w=600&q=80" alt="Modern backyard pool" />
+      <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848a?auto=format&fit=crop&w=600&q=80" alt="Clear pool water" />
+      <img src="https://images.unsplash.com/photo-1560185127-6ed189bf84b2?auto=format&fit=crop&w=600&q=80" alt="Luxury pool" />
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h3>Contact Caesar Blue Pools</h3>
+    <form action="https://formspree.io/f/mayvlzoq" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="cta">Send Message</button>
+    </form>
+  </section>
 
   <footer>
-    <p>© 2025 Caesar Blue Pools. All rights reserved.</p>
-    <p><a href="mailto:management@Caesarpool.com">management@Caesarpool.com</a></p>
+    <p>© 2025 Caesar Blue Pools • <a href="mailto:management@caesarpool.com">management@caesarpool.com</a></p>
   </footer>
+
 </body>
 </html>
