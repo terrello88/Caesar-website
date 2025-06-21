@@ -2,70 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Caesar Blue Pools</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f0f8ff;
+      color: #003366;
+    }
+    header {
+      background: #0077be; /* ocean blue */
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    header img {
+      height: 50px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: white;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .hero-img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    button.cta {
+      background-color: #0099ff;
+      color: white;
+      border: none;
+      padding: 1rem 1.5rem;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+    }
+    button.cta:hover {
+      background-color: #0077be;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+    }
+    input, textarea {
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+    a {
+      color: #0099ff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <header>
+    <img src="https://i.postimg.cc/WF1Q0LHc/caesar-blue-pools-logo.png" alt="Caesar Blue Pools Logo" />
     <h1>Caesar Blue Pools</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <section id="hero">
-    <h2>Reliable Pool Maintenance You Can Trust</h2>
-    <p>Serving Orangeburg, SC and surrounding areas</p>
-  </section>
+  <main>
+    <section>
+      <img class="hero-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Beautiful pool water" />
+      <h2>Your Trusted Pool Maintenance Experts</h2>
+      <p>Keeping your pool crystal clear and ready for fun all year round. We offer professional cleaning, chemical balancing, and equipment checks.</p>
+      <button class="cta" onclick="document.getElementById('contact').scrollIntoView()">Contact Us</button>
+    </section>
 
-  <section id="services">
-    <h3>Our Services</h3>
-    <ul>
-      <li>Weekly Pool Maintenance</li>
-      <li>Water Testing & Balancing</li>
-      <li>Filter Cleaning</li>
-      <li>Algae Treatment</li>
-    </ul>
-  </section>
+    <section>
+      <h3>Pool Cleaning Supplies</h3>
+      <img src="https://images.unsplash.com/photo-1590080877777-cfa6a9e69e46?auto=format&fit=crop&w=800&q=80" alt="Pool cleaning supplies" style="width:100%; max-width:500px; border-radius:8px;" />
+    </section>
 
-  <section id="about">
-    <h3>About Us</h3>
-    <p>Inspired by Caesar, our beloved blue Staffy 🐾, we bring care and loyalty to every pool we clean.</p>
-  </section>
-
-  <section id="gallery">
-    <h3>Gallery</h3>
-    <div class="gallery">
-      <img src="https://via.placeholder.com/300x200?text=Before+Cleaning" alt="Before Pool Cleaning">
-      <img src="https://via.placeholder.com/300x200?text=After+Cleaning" alt="After Pool Cleaning">
-      <img src="https://via.placeholder.com/300x200?text=Caesar+Approved" alt="Caesar Approved Pool">
-    </div>
-  </section>
-
-  <section id="contact">
-    <h3>Contact & Booking</h3>
-    <form name="contact" method="POST" data-netlify="true">
-      <p><label>Your Name: <input type="text" name="name" required></label></p>
-      <p><label>Email: <input type="email" name="email" required></label></p>
-      <p><label>Phone: <input type="tel" name="phone"></label></p>
-      <p><label>Service Needed: 
-        <select name="service">
-          <option>Weekly Maintenance</option>
-          <option>Water Testing</option>
-          <option>Filter Cleaning</option>
-          <option>Algae Treatment</option>
-          <option>Other</option>
-        </select>
-      </label></p>
-      <p><label>Preferred Date: <input type="date" name="preferred_date"></label></p>
-      <p><label>Message: <textarea name="message"></textarea></label></p>
-      <p><button type="submit">Submit Request</button></p>
-    </form>
-  </section>
+    <section id="contact">
+      <h3>Contact Caesar Blue Pools</h3>
+      <form id="contact-form" action="https://formspree.io/f/mayvlzoq" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="cta">Send Message</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Caesar Blue Pools</p>
+    <p>© 2025 Caesar Blue Pools. All rights reserved.</p>
+    <p><a href="mailto:management@Caesarpool.com">management@Caesarpool.com</a></p>
+  </footer>
+</body>
+</html>
