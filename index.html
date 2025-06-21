@@ -8,7 +8,6 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
       background-color: #f0f8ff;
       color: #003366;
     }
@@ -28,31 +27,12 @@
     header h1 {
       margin: 0;
       color: white;
-      font-size: 1.8rem;
     }
 
     main {
       max-width: 800px;
       margin: 2rem auto;
       padding: 1rem;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    h2, h3 {
-      margin-top: 0;
-    }
-
-    button.cta {
-      background-color: #0099ff;
-      color: white;
-      border: none;
-      padding: 1rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
     }
 
     form {
@@ -67,7 +47,16 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       font-size: 1rem;
-      resize: vertical;
+    }
+
+    button.cta {
+      background-color: #0099ff;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     footer {
@@ -79,8 +68,7 @@
     }
 
     a {
-      color: #ffffff;
-      text-decoration: none;
+      color: white;
     }
   </style>
 </head>
@@ -94,41 +82,46 @@
   <main>
     <section>
       <h2>Professional Pool Maintenance</h2>
-      <p>
-        Welcome to Caesar Blue Pools! We provide expert pool care, cleaning, and maintenance using high-quality products and proven techniques.
-      </p>
-      <p>
-        Serving <strong>Columbia, Hopkins, Eastover, Orangeburg</strong>, and surrounding areas.
-      </p>
-      <button class="cta" onclick="document.getElementById('contact').scrollIntoView()">Request Service</button>
+      <p>Serving Columbia, Hopkins, Eastover, Orangeburg, and surrounding areas.</p>
     </section>
 
     <section>
-      <h3>Our Services</h3>
-      <ul>
-        <li>✅ Routine Pool Cleaning</li>
-        <li>✅ Chemical Balancing</li>
-        <li>✅ Equipment Checks</li>
-        <li>✅ Filter Maintenance</li>
-        <li>✅ Reliable Weekly Plans</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h3>Contact Caesar Blue Pools</h3>
-      <form action="https://formspree.io/f/xwkgrjzr" method="POST">
+      <h3>Contact Us</h3>
+      <form id="contact-form">
         <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="_replyto" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit" class="cta">Send Message</button>
       </form>
+      <p id="form-status"></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Caesar Blue Pools</p>
-    <p><a href="mailto:management@caesarpool.com">management@caesarpool.com</a></p>
+    <p>© 2025 Caesar Blue Pools — <a href="mailto:management@caesarpool.com">management@caesarpool.com</a></p>
   </footer>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value,
+      };
+
+      const res = await fetch("/.netlify/functions/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      document.getElementById("form-status").textContent = result.message || result.error || "Something went wrong.";
+      form.reset();
+    });
+  </script>
 
 </body>
 </html>
