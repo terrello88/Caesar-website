@@ -5,11 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Caesar Blue Pools | Pool Maintenance in Columbia, SC</title>
+
+  <!-- SEO Meta -->
   <meta name="description" content="Ensure your pool stays pristine with our expert cleaning and maintenance services. From regular upkeep to specialized treatments for black, yellow, and green algae, Caesar's Blue Pool Service has you covered. Dive into a clear, fresh swimming experience every time.">
   <meta name="keywords" content="pool maintenance Columbia SC, pool cleaning Hopkins SC, Caesar Blue Pools, Orangeburg pool service, swimming pool supplies Columbia SC">
   <meta name="author" content="Caesar Blue Pools">
 
-  <!-- Open Graph (for Facebook, LinkedIn) -->
+  <!-- Open Graph (Facebook/LinkedIn) -->
   <meta property="og:title" content="Caesar Blue Pools | Pool Maintenance in Columbia, SC">
   <meta property="og:description" content="Ensure your pool stays pristine with professional service, algae treatment, and weekly cleaning.">
   <meta property="og:image" content="https://caesarpool.com/img_4458.jpeg">
@@ -88,6 +90,10 @@
       font-size: 0.9rem;
       background-color: rgba(0, 0, 0, 0.6);
     }
+
+    a {
+      color: #aadfff;
+    }
   </style>
 </head>
 <body>
@@ -99,14 +105,15 @@
   <div class="content">
     <h1>Caesar Blue Pools</h1>
     <p><strong>Professional Pool Maintenance & Supplies</strong></p>
-
     <p>Ensure your pool stays pristine with our expert cleaning and maintenance services. From regular upkeep to specialized treatments for black, yellow, and green algae, Caesar's Blue Pool Service has you covered. Dive into a clear, fresh swimming experience every time.</p>
-
     <p>Serving Columbia, Hopkins, Eastover, Orangeburg, and surrounding areas.</p>
 
     <h2>Contact Us Here for Service</h2>
-    <form name="contact" method="POST" data-netlify="true" action="/thank-you">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact" />
+      <p hidden>
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Tell us what you need..." rows="5" required></textarea>
@@ -115,8 +122,8 @@
   </div>
 
   <footer>
-    © 2025 Caesar Blue Pools — 
-    <a href="mailto:management@caesarpool.com" style="color:#aadfff;">management@caesarpool.com</a>
+    © 2025 Caesar Blue Pools —
+    <a href="mailto:management@caesarpool.com">management@caesarpool.com</a>
   </footer>
 
 </body>
