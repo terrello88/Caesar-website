@@ -2,121 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Caesar Blue Pools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caesar Blue Pools | Orangeburg, SC</title>
+  <meta name="description" content="Pool cleaning and chemical supplies for Orangeburg, SC. Contact Caesar Blue Pools today for clean, clear water.">
+  <link rel="icon" href="favicon.ico" />
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f0f8ff;
-      color: #003366;
+      background: url('B8BE469F-B0DC-4E31-9319-BEAA470A4769.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
     }
-
     header {
-      background-color: #0077be;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
     }
-
-    header h1 {
-      margin: 0;
-      color: white;
+    .logo {
+      max-width: 150px;
     }
-
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
+    .content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 600px;
+      border-radius: 12px;
     }
-
+    h1 {
+      margin-top: 0;
+    }
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 400px;
+      margin-top: 20px;
     }
-
     input, textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-
-    button.cta {
-      background-color: #0099ff;
-      color: white;
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 8px;
       border: none;
-      padding: 1rem;
-      font-size: 1rem;
-      border-radius: 5px;
+    }
+    button {
+      background-color: #008cba;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
-
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
-    a {
-      color: white;
+    button:hover {
+      background-color: #005f79;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Caesar Blue Pools</h1>
+    <img src="8574F774-016C-465A-95F2-13B4A638D143.jpeg" alt="Caesar Blue Pools Logo" class="logo">
   </header>
 
-  <main>
-    <section>
-      <h2>Professional Pool Maintenance</h2>
-      <p>Serving Columbia, Hopkins, Eastover, Orangeburg, and surrounding areas.</p>
-    </section>
+  <div class="content">
+    <h1>Welcome to Caesar Blue Pools</h1>
+    <p>
+      We specialize in professional pool cleaning, water testing, and chemical supplies in Orangeburg, SC.
+      Whether you're a homeowner or managing a commercial property, we're here to help you keep your water crystal clear.
+    </p>
+    <h2>Contact Us Here for Service</h2>
 
-    <section>
-      <h3>Contact Us</h3>
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="cta">Send Message</button>
-      </form>
-      <p id="form-status"></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Caesar Blue Pools — <a href="mailto:management@caesarpool.com">management@caesarpool.com</a></p>
-  </footer>
-
-  <script>
-    document.getElementById("contact-form").addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = {
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value,
-      };
-
-      const res = await fetch("/.netlify/functions/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      const result = await res.json();
-      document.getElementById("form-status").textContent = result.message || result.error || "Something went wrong.";
-      form.reset();
-    });
-  </script>
+    <!-- Keep your existing form setup here -->
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Tell us what you need..." rows="5" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
 
 </body>
 </html>
