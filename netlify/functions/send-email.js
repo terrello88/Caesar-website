@@ -17,7 +17,7 @@ exports.handler = async (event) => {
     secure: true,
     auth: {
       user: '8035876473',
-      pass: 'gyxzaj-siJhe5-kiszoz' // replace this with your actual Zoho app password
+      pass: 'tD9q EnBH h80K' // replace this with your actual Zoho app password
     }
   });
 
