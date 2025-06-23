@@ -16,13 +16,13 @@ exports.handler = async (event) => {
     port: 465,
     secure: true,
     auth: {
-      user: '8035876473',
-      pass: 'tD9q EnBH h80K' // replace this with your actual Zoho app password
+      user: 'management@caesarpool.com',
+      pass: process.env.ZOHO_APP_PASSWORD // Secured password
     }
   });
 
   try {
-    // Email to Caesar Blue Pools (admin notification)
+    // Email to Caesar Blue Pools
     await transporter.sendMail({
       from: 'management@caesarpool.com',
       to: 'management@caesarpool.com',
